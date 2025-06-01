@@ -1,0 +1,4 @@
+[test]
+demoUrl = "https://www.saucedemo.com/"
+userName = "standard_user"
+passWord = "secret_sauce"
