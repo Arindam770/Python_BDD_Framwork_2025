@@ -1,0 +1,14 @@
+# Ignore a specific folder
+Python_BDD_Framwork/reports/
+
+# Ignore all `.log` files
+*.log
+*.png
+*.js
+*.html
+*.css
+*.json
+*.pyc
+*.ico
+*.txt
+*.cpython-313-pytest-8.3.5.pyc
