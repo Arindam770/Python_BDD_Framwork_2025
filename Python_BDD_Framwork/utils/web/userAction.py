@@ -17,3 +17,14 @@ class UserAction:
 
     def sendKeys(self, byLocator, txt:str):
         elm = WebDriverWait(self.driver, ecWait).until(EC.visibility_of_element_located(byLocator)).send_keys(txt)
+
+    def click(self, byLocator):
+        elm = WebDriverWait(self.driver, ecWait).until(EC.visibility_of_element_located(byLocator))
+        elm.click()
+
+    def getTitle(self):
+        return self.driver.title
+    
+    def getText(self, byLocator):
+        elm = WebDriverWait(self.driver, ecWait).until(EC.visibility_of_element_located(byLocator))
+        return elm.text

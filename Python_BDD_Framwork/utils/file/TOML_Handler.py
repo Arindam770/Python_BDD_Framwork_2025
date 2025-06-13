@@ -15,7 +15,7 @@ class TOML_Handler:
             toml.dump(self.config, file)
 
 if __name__ == '__main__':
-    t = TOML_Handler('config\config.toml')
+    t = TOML_Handler('Python_BDD_Framwork\\config\\config.toml')
     print(t.load())
     t.config['test']['username'] = 'Arindam'
     t.save()

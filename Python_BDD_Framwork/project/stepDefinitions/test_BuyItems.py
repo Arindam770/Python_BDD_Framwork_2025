@@ -12,11 +12,9 @@ def test_eComWebsite():
 
 @given(cfparse('Login into saucedemo website {testDataNum}'))
 def given_LoginToWebsite(setupDriver, testDataNum):
-    # print(f'Running test with browser: {setupDriver.name}')
-    # print(f'Test data number: {testDataNum}')
-    # print('Done')
+
     login = PerformLogin(setupDriver)
-    
+    login.loginToSauceDemo()
 
 @when('Add required items in cart')
 def when_AddItemsToCart(setupDriver):
