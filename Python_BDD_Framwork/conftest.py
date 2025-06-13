@@ -8,6 +8,13 @@ def setupDriver(request):
     browser = getattr(request, "param", "Chrome")
     if browser == "Chrome":
         chrome_options = Options()
+        prefs = {
+       "credentials_enable_service": False,
+       "profile.password_manager_enabled": False,
+       "profile.password_manager_leak_detection": False
+        }
+        chrome_options.add_experimental_option("prefs", prefs)
+        chrome_options.add_argument("--disable-web-security")
         driver = webdriver.Chrome(options=chrome_options)
         driver.maximize_window()
     elif browser == "Firefox":

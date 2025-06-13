@@ -1,6 +1,7 @@
 from pytest_bdd import scenario, given, when, then
 from pytest_bdd.parsers import cfparse
 
+from Python_BDD_Framwork.project.funcSupport.PerformAddToCart import PerformAddToCart
 from Python_BDD_Framwork.project.funcSupport.loginPage import PerformLogin
 
 
@@ -15,9 +16,15 @@ def given_LoginToWebsite(setupDriver, testDataNum):
 
     login = PerformLogin(setupDriver)
     login.loginToSauceDemo()
+    print("Swag Labs Home page is available")
 
 @when('Add required items in cart')
 def when_AddItemsToCart(setupDriver):
+
+    addToCart = PerformAddToCart(setupDriver)
+    addToCart.searchItem()
+    addToCart.perfromAddToCart()
+    addToCart.backToHome()
     print('Adding items to cart')
 
 @when('Open cart and check all the items')

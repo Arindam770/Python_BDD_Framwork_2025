@@ -27,4 +27,4 @@ class PerformLogin(UserAction):
         self.click(LoginPageElm.loginBtn)
         txtTitle = self.getTitle()
         assert txtTitle == "Swag Labs", "Website is not correct"
-        print("Swag Labs Home page is available")
+        

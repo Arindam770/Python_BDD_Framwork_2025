@@ -36,7 +36,7 @@ class CSV_Handler:
         return listofData
     
 if __name__ == '__main__':
-    csv_handler = CSV_Handler('TestData\\testData_Ecom.csv')
+    csv_handler = CSV_Handler('Python_BDD_Framwork\\TestData\\testData_Ecom.csv')
     #print(csv_handler.read_csv_dict())
     data = csv_handler.read_csv_dict()
     print(data)

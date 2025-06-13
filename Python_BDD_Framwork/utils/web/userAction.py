@@ -19,7 +19,7 @@ class UserAction:
         elm = WebDriverWait(self.driver, ecWait).until(EC.visibility_of_element_located(byLocator)).send_keys(txt)
 
     def click(self, byLocator):
-        elm = WebDriverWait(self.driver, ecWait).until(EC.visibility_of_element_located(byLocator))
+        elm = WebDriverWait(self.driver, ecWait).until(EC.element_to_be_clickable(byLocator))
         elm.click()
 
     def getTitle(self):
@@ -28,3 +28,7 @@ class UserAction:
     def getText(self, byLocator):
         elm = WebDriverWait(self.driver, ecWait).until(EC.visibility_of_element_located(byLocator))
         return elm.text
+    
+    def getAllElements(self, byLocator):
+        elms = WebDriverWait(self.driver, ecWait).until(EC.visibility_of_all_elements_located(byLocator))
+        return elms
