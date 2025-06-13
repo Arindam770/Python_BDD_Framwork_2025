@@ -1,6 +1,8 @@
 from pytest_bdd import scenario, given, when, then
 from pytest_bdd.parsers import cfparse
 
+from Python_BDD_Framwork.project.funcSupport.loginPage import PerformLogin
+
 
 
 @scenario('../features/eComWebsite.feature','Buy multiple Items')
@@ -10,9 +12,11 @@ def test_eComWebsite():
 
 @given(cfparse('Login into saucedemo website {testDataNum}'))
 def given_LoginToWebsite(setupDriver, testDataNum):
-    print(f'Running test with browser: {setupDriver.name}')
-    print(f'Test data number: {testDataNum}')
-    print('Done')
+    # print(f'Running test with browser: {setupDriver.name}')
+    # print(f'Test data number: {testDataNum}')
+    # print('Done')
+    login = PerformLogin(setupDriver)
+    
 
 @when('Add required items in cart')
 def when_AddItemsToCart(setupDriver):
